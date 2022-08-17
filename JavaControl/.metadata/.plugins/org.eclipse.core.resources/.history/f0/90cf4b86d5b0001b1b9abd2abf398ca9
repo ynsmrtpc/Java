@@ -1,0 +1,22 @@
+/*
+ * ARTIK YIL HESAPLAYAN PROGRAM 
+ */
+
+package KolayOrnekler;
+
+import java.util.Scanner;
+
+public class Exp3 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Please, enter a year:");
+		int year = scan.nextInt();
+		
+		
+		
+	}
+
+}

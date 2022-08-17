@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a0054e1e2a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Çalışanlar Projesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+<body>
+
+<!-- Modal -->
+
+
+<div style=" background-color: transparent; min-height: 550px" class="modal fade" id="formModal"  role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Çalışan Bilgileri Güncelleme</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="update_employee-form" name="form">
+                    <div class="input-field col s12">
+                        <input id="update_name" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="update_department" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="update_salary" type="number" class="validate" >
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="update" class="waves-effect waves-light btn blue-grey darken-3">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Finish Modal -->
+
+<div class="container">
+    <div align="center" class="card row">
+        <div id="addForm" class="card-body">
+            <form id="employee-form" >
+                <div class="input-field col s12">
+                    <input id="name" type="text" class="validate" required>
+                    <label for="name">Çalışanın İsmi</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="department" type="text" class="validate" required>
+                    <label for="department">Çalıştığı Depertman</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="salary" type="number" class="validate" required >
+                    <label for="salary">Çalışanın Maaşı</label>
+                </div>
+                <button id="add" type="submit" class="btn-floating btn-large waves-effect  purple accent-2">EKLE</button>
+
+            </form>
+        </div>
+        <button id="employee-list" class="waves-effect waves-light btn deep-purple lighten-2">Çalışan Ekle</button>
+
+    </div>
+
+    <div id="employee-card" class="card row employee">
+        <div class="card-body">
+            <hr>
+            <h5 class="card-title" id="employees-title">Çalışanlar</h5>
+            <hr>
+            <table id="tblEmployee" class="highlight">
+                <thead class="purple lighten-5">
+                <tr>
+                    <th scope="col">İsim</th>
+                    <th scope="col">Departman</th>
+                    <th scope="col">Maaş</th>
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                    <th scope="col" class="d-none">Id</th>
+                </tr>
+                </thead>
+                <tbody id="employees">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Yunus Emre Topçu</td>
+                    <td>Bilişim</td>
+                    <td>4000</td>
+                    <td><a href="#" id="update-employee" class="btn btn-danger">Güncelle</a></td>
+                    <td> <a href="#" id="delete-employee" class="btn btn-danger">Sil</a></td>
+                </tr> -->
+                </tbody>
+            </table>
+            <div class="float-right">
+                <small class="float-right" style="color: gray"><b id="count"></b> </small>
+                <br>
+                <a  style="background-color: #02723A !important;" class="btn-floating btn-small waves-effect float-right" data-toggle="tooltip" data-placement="bottom" title="Excel'e Dönüştür"><i id="button-a" class="fa fa-file-excel-o"></i> </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="./bundles/bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./src/xlsx.full.min.js"></script>
+<script src="./src/FileSaver.min.js"></script>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script>
+
+    let wb = XLSX.utils.table_to_book(document.getElementById('tblEmployee'), {sheet:"Sheet JS"});
+    let wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
+
+    function s2ab(s) {
+
+        let buf = new ArrayBuffer(s.length);
+        let view = new Uint8Array(buf);
+        for (let i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+        return buf;
+    }
+    $("#button-a").click(function(){
+        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'employee-table.xlsx');
+    });
+</script>
+
+
+</body>
+</html>

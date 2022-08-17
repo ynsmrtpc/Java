@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\topcu\Desktop\Ders Dosyalarý\JAVA DOSYALARI\JavaControl\.metadata\.plugins\org.eclipse.jdt.core
+1754541844.index
+1787148541.index
+671321567.index
+2155982371.index

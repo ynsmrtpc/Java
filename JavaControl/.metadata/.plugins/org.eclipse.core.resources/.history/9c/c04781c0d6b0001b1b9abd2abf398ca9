@@ -1,0 +1,29 @@
+/*
+ * ARTIK YIL HESAPLAYAN PROGRAM 
+ * Genel bir kural olarak, artýk yýllar 4 rakamýnýn katý olan yýllardýr. Ancak bu kuralýn iki istisnasý vardýr:
+ * 1. 100'ün katý olan yýllardan sadece 400'e kalansýz olarak bölünebilenler artýk yýldýr
+ * 2. Hesabý daha da hassas hâle getirmek için -400'e kalansýz bölünebildiði halde 
+      -4000'e kalansýz olarak bölünebilen yýllar artýk yýl kabul edilmez 
+ */
+
+package KolayOrnekler;
+
+import java.util.Scanner;
+
+public class Exp3 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Please, enter a year:");
+		int year = scan.nextInt();
+		
+		if (year % 4 == 0) {
+			
+		}
+
+		
+	}
+
+}

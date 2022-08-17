@@ -1,0 +1,11 @@
+package Interface;
+
+public class Student implements IDatabase {
+
+	public void Log() {
+		System.out.println("Öðrenci eklendi...");		
+	}
+	
+	
+	
+}

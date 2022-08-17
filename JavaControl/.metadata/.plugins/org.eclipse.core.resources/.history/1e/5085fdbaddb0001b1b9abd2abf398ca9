@@ -1,0 +1,25 @@
+package KolayOrnekler;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class asd {
+
+	public static void main(String args[])
+    {
+           
+//          System.out.println(args[0].length());
+//          System.out.println(args[0].substring(args[0].length()-2));
+            TimerTask task = new TimerTask()
+            {int i;
+                   
+                    public void run()
+                    {
+                            i++;
+                            System.out.println(i + "-merhaba");
+                            if (i == 5) { System.exit(0); }
+                    }
+            };
+            Timer t = new Timer();
+            t.schedule(task, 0, 1000);
+    }
+}

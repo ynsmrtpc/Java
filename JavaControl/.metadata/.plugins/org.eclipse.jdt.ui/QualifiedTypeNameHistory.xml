@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Inheritence.employee"/>
+    <fullyQualifiedTypeName name="Inheritence.manager"/>
+    <fullyQualifiedTypeName name="sun.tools.jar.Main"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.sun.tools.jdeprscan.scan.Scan"/>
+</qualifiedTypeNameHistroy>

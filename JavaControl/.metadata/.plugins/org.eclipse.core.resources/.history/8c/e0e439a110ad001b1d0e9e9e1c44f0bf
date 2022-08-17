@@ -1,0 +1,8 @@
+package Inheritence;
+
+public interface I_database {
+	
+	void Log();
+	
+
+}

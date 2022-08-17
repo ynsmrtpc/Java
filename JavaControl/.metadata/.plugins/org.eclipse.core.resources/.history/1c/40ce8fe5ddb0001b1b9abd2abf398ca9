@@ -1,0 +1,19 @@
+package KolayOrnekler;
+
+import java.io.*;
+
+public class hesapla
+{
+        public static void main(String[] Args) throws IOException
+        {
+
+                System.out.println("Herhangi bir metin giriniz:");
+               
+                BufferedReader B = new BufferedReader(new InputStreamReader(System.in));
+               
+                String S = B.readLine();
+               
+                System.out.println("Girdiðiniz metin : " + S);
+
+        }
+}

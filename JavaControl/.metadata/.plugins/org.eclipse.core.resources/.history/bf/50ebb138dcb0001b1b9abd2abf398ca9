@@ -1,0 +1,28 @@
+/*
+ *  Kullanýcý Tarafýndan Girilen Sayýnýn Basamaklarý Toplamýný Bulan Java Programý
+ * */
+package KolayOrnekler;
+
+import java.util.Scanner;
+
+public class Exp4 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Please, enter a number:");
+		int num = scan.nextInt();
+		
+		int one, ten ,tho;
+		
+		one = num % 10;						
+		ten = (num % 100) % 10; 			
+		tho = ((num % 1000) & 100) % 10;
+		
+		System.out.println(one);
+		System.out.println(ten);
+		System.out.println(tho);
+		//System.out.println("The sum of the digits of the number you entered: " + (one+ten+tho));
+	}
+}
